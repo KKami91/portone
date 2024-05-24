@@ -1,0 +1,18 @@
+<!-- src/views/orderComplete.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>주문 완료</title>
+</head>
+<body>
+  <h1>주문이 완료되었습니다!</h1>
+  <p>주문 번호: <%= orderId %></p>
+  <p>주문 상태: <%= orderStatus %></p>
+  <p>결제 정보:</p>
+  <ul>
+    <li>결제 ID: <%= payment.paymentId %></li>
+    <li>결제 금액: <%= payment.amount %></li>
+    <li>결제 상태: <%= payment.status %></li>
+  </ul>
+</body>
+</html>

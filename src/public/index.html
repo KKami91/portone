@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랭체인 강의 결제</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>랭체인 강의 결제</h1>
+  <div>
+    <h2>랭체인 기초 강의</h2>
+    <img src="images/langchain.png" alt="랭체인 이미지">
+    <p>가격: 99,000원</p>
+    <button class="pay-button" data-lecture-code="LANG_BASIC">결제하기</button>
+    <p></p>
+  </div>
+  <div>
+    <h2>랭체인 중급 강의</h2>
+    <img src="images/langchain.png" alt="랭체인 이미지">
+    <p>가격: 149,000원</p>
+    <button class="pay-button" data-lecture-code="LANG_INTERMEDIATE">결제하기</button>
+    <p></p>
+  </div>
+  <div>
+    <h2>랭체인 고급 강의</h2>
+    <img src="images/langchain.png" alt="랭체인 이미지">
+    <p>가격: 199,000원</p>
+    <button class="pay-button" data-lecture-code="LANG_ADVANCED">결제하기</button>
+    <p></p>
+  </div>
+  <script src="bundle.js"></script>
+</body>
+</html>
