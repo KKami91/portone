@@ -1,10 +1,5 @@
 import PortOne from "@portone/browser-sdk/v2";
 
-interface Lecture {
-  name: string;
-  price: number;
-}
-
 const lectures = {
   LANG_BASIC: { name: "랭체인 기초 강의", price: 99000 },
   LANG_INTERMEDIATE: { name: "랭체인 중급 강의", price: 149000 },
