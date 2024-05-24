@@ -57,7 +57,6 @@ async function findOrderById(orderId: string, lectureName: string, lecturePrice:
   }
 
   return {
-    id: orderId,
     lectureName: lectureName,
     amount: lecturePrice
   };
