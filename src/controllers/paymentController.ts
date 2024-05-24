@@ -1,15 +1,9 @@
 import { Request, Response } from 'express';
 
-const lectures: { [key: string]: { name: string; price: number } } = {
-  LANG_BASIC: { name: "랭체인 기초 강의", price: 99000 },
-  LANG_INTERMEDIATE: { name: "랭체인 중급 강의", price: 149000 },
-  LANG_ADVANCED: { name: "랭체인 고급 강의", price: 199000 },
-};
-
 export async function complete(req: Request, res: Response) {
   if (req.method === 'POST') {
     try {
-      const { paymentId, orderId, lectureCode, lectureName, lecturePrice } = req.body;
+      const { paymentId, orderId, lectureName, lecturePrice } = req.body;
       const paymentResponse = await fetch(
         `https://api.portone.io/payments/${paymentId}`,
         { headers: { Authorization: `PortOne ${process.env.PORTONE_SECRET_KEY}` } }
