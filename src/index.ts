@@ -24,7 +24,7 @@ async function initiatePayment(event: Event) {
 
   const response = await PortOne.requestPayment({
     storeId: process.env.PORTONE_STORE_ID as string,
-    channelKey: process.env.PORTONE_CHANNEL_KEY,
+    channelKey: process.env.PORTONE_CHANNEL_KEY, 
     paymentId: `payment-${crypto.randomUUID()}`,
     orderName: lecture.name,
     totalAmount: lecture.price,
@@ -36,25 +36,20 @@ async function initiatePayment(event: Event) {
       alert(response.message);
       return;
     } else {
-      console.log('not null');
       // 결제 성공 시 처리
       console.log('Index.ts ------ paymentId: ', response.paymentId);
       const notified = await fetch('/payment/complete', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // paymentId와 주문 정보를 서버에 전달합니다
         body: JSON.stringify({
           paymentId: response.paymentId,
           code: response.code,
           message: response.message,
-          // 주문 정보...
         }),})
       
       if (notified.status === 200) {
         // 서버에서 결제 검증 및 완료 처리가 성공한 경우
         console.log('Payment processed successfully:');
-
-        ///////
         const responseData = await notified.json();
         const newWindow = window.open('', '_blank', 'width=500, height=600');
         newWindow?.document.write(`
@@ -73,7 +68,6 @@ async function initiatePayment(event: Event) {
     }
   }
 }
-
 
 document.querySelectorAll(".pay-button").forEach((button) => {
   button.addEventListener("click", initiatePayment);
