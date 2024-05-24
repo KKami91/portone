@@ -57,7 +57,7 @@ async function findOrderById(orderId: string, lectureInformation: any) {
   // 실제 주문 정보를 가져오는 로직을 구현해야 합니다.
   // 여기서는 예시로 더미 데이터를 반환합니다.
   return {
-    id: 'aasdsa',
+    id: 'orderId',
     amount: 1000,
   };
 }
