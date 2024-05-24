@@ -54,7 +54,6 @@ async function initiatePayment(event: Event) {
       
       if (notified.status === 200) {
         // 서버에서 결제 검증 및 완료 처리가 성공한 경우
-        console.log('Payment processed successfully:');
         const responseData = await notified.json();
         const newWindow = window.open('', '_blank', 'width=500, height=600');
         newWindow?.document.write(`
